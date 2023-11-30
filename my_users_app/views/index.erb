@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Users index page </title>
+        <style>
+            td, th {
+                border: 2px solid #262626;
+                padding: 6px;
+                text-align: center;
+            }
+            tr:nth-child(even) {
+                background-color: #eee;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Users</h1>
+        <table>
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Age</th>
+                <th>Email</th>
+            </tr>
+
+            <% for i in 0..@users.length - 1 do %>
+                <tr>
+                    <td>
+                        <%= @users[i]['firstname'] %>
+                    </td>
+
+                    <td>
+                        <%= @users[i]['lastname'] %>
+                    </td>
+
+                    <td>
+                        <%= @users[i]['age'] %>
+                    </td>
+
+                    <td>
+                        <%= @users[i]['email'] %>
+                    </td>
+                </tr>
+            <% end %>
+        </table>
+    </body>
+</html>
